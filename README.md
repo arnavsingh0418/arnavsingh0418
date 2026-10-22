@@ -38,14 +38,20 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>1</b> approved · <b>2</b> in review · across <b>3</b> open-source projects</p>
+<p><b>2</b> merged · <b>2</b> in review · across <b>4</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
     <td><a href="https://github.com/Tencent/teamai-cli/pull/1281"><b>Tencent/teamai-cli</b> #1281</a><br/><sub>Decode exec and clone output once per stream so split UTF-8 survives</sub></td>
     <td>Bug fix</td>
-    <td><b>Approved</b></td>
+    <td><b>Merged</b></td>
     <td align="right">5.6k★</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/neomjs/neo/pull/20007"><b>neomjs/neo</b> #20007</a><br/><sub>Rectangle#intersects never returns a Boolean; add contains…</sub></td>
+    <td>Bug fix</td>
+    <td><b>Merged</b></td>
+    <td align="right">3.3k★</td>
   </tr>
   <tr>
     <td><a href="https://github.com/silexlabs/Silex/pull/1930"><b>silexlabs/Silex</b> #1930</a><br/><sub>Load the selected weights on the published website</sub></td>
