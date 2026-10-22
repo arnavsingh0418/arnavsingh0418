@@ -1,8 +1,8 @@
 # Hi, I'm Arnav 👋
 
-**CS & Software Engineering student at the University of Washington** (4.0 GPA, Class of 2028). I build full-stack apps and AI tools, co-founded an AI startup, and have placed at 6 hackathons.
+**CS & Software Engineering student at the University of Washington**. I build full-stack apps and AI tools, co-founded an AI startup, and have placed at 6 hackathons.
 
-📫 [arnavsingh08@outlook.com](mailto:arnavsingh08@outlook.com) · 💼 [LinkedIn](https://www.linkedin.com/in/arnav-singh-516021306/) · 📍 Seattle, WA · 🎯 Looking for **Summer 2027 SWE internships**
+📫 [arnavsingh08@outlook.com](mailto:arnavsingh08@outlook.com) · 💼 [LinkedIn](https://www.linkedin.com/in/arnav-singh-516021306/) · 📍 Sammamish, WA · 🎯 Looking for **Summer 2027 SWE internships**
 
 ---
 
@@ -36,19 +36,6 @@
 
 ---
 
-## 💼 Experience
-
-**Co-Founder & Full-Stack Engineer · [AtlionAI](https://atlionai.com/)** · *Feb 2025 – Present*
-AI content planning and analytics platform for creators. Built the React/TypeScript web app for scheduling posts across 4 social platforms and a Python recommendation engine that uses vector embeddings and cosine similarity to recommend posting times. Won **1st place + $10,000** at WAForge; **75+ users** on the waitlist.
-
-**Software Engineering Intern · Gatekeep.ai** · *Oct 2024 – Apr 2025*
-Startup generating AI explainer videos for math and science. Built an Edpuzzle-style classroom platform in Next.js, an AI question-answering feature over generated videos, and async webhook callbacks to GPU-backed FastAPI services. **150+ videos** generated on the platform.
-
-**Computer Science Instructor · iCode Sammamish** · *Jul 2025 – Jul 2026*
-Taught OOP, data structures, and algorithms in Python and JavaScript to 6+ student groups.
-
----
-
 ## 🚀 Featured Projects
 
 | Project | What it is | Built with |
@@ -62,13 +49,17 @@ Taught OOP, data structures, and algorithms in Python and JavaScript to 6+ stude
 
 ## 🌍 Open Source Contributions
 
-| Project | Contribution | Status |
-|---|---|---|
-| [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli) | [Fix split UTF-8 characters in command output](https://github.com/Tencent/teamai-cli/pull/1281): decode child-process output once per stream with `StringDecoder`, plus tests and a real-CLI repro | ![](https://img.shields.io/github/pulls/detail/state/Tencent/teamai-cli/1281?style=flat-square&label=) |
-| [dapr/dapr-agents](https://github.com/dapr/dapr-agents) | [Migrate to the Dapr Python SDK 1.19 RC](https://github.com/dapr/dapr-agents/pull/913) and its new `dapr[fastapi,workflow]` extras layout | ![](https://img.shields.io/github/pulls/detail/state/dapr/dapr-agents/913?style=flat-square&label=) |
-| [silexlabs/Silex](https://github.com/silexlabs/Silex) | [Load the selected Google Font weights on published sites](https://github.com/silexlabs/Silex/pull/1930) (also fixes italic-only fonts that never loaded) | ![](https://img.shields.io/github/pulls/detail/state/silexlabs/Silex/1930?style=flat-square&label=) |
-
-<sub>Status badges update automatically (open / merged).</sub>
+<!-- OSS-PRS:START -->
+<p><b>0</b> merged · <b>3</b> in review · across <b>3</b> open-source projects</p>
+<table>
+  <tr><th width="50%">✅ Recently merged</th><th width="50%">⏳ In review</th></tr>
+  <tr>
+    <td valign="top"><i>None merged yet: the first ones are in review.</i></td>
+    <td valign="top"><a href="https://github.com/Tencent/teamai-cli/pull/1281"><b>Tencent/teamai-cli</b> #1281</a><br/><sub>fix: decode exec and clone output once per stream so split UTF-8 survives</sub><br/><br/><a href="https://github.com/dapr/dapr-agents/pull/913"><b>dapr/dapr-agents</b> #913</a><br/><sub>chore(deps): bump dapr Python SDK to 1.19.0rc4 and use dapr[fastapi,w…</sub><br/><br/><a href="https://github.com/silexlabs/Silex/pull/1930"><b>silexlabs/Silex</b> #1930</a><br/><sub>fix(fonts): load the selected weights on the published website</sub></td>
+  </tr>
+</table>
+<sub>Updated automatically from GitHub once a day.</sub>
+<!-- OSS-PRS:END -->
 
 ---
 

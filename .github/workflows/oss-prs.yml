@@ -1,0 +1,31 @@
+name: Update open-source PRs
+
+on:
+  schedule:
+    - cron: "17 14 * * *"     # once a day (14:17 UTC, early morning Pacific)
+  workflow_dispatch:         # "Run workflow" button for an instant refresh
+  push:
+    branches: [main]
+    paths: [scripts/update-oss-prs.mjs, .github/workflows/oss-prs.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/update-oss-prs.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit if changed
+        run: |
+          if git diff --quiet README.md; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: refresh open-source PRs"
+          git push
