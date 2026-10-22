@@ -38,13 +38,13 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>3</b> pull requests in review across <b>3</b> projects</p>
+<p><b>1</b> approved · <b>2</b> in review · across <b>3</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
     <td><a href="https://github.com/Tencent/teamai-cli/pull/1281"><b>Tencent/teamai-cli</b> #1281</a><br/><sub>Decode exec and clone output once per stream so split UTF-8 survives</sub></td>
     <td>Bug fix</td>
-    <td>In review</td>
+    <td><b>Approved</b></td>
     <td align="right">5.6k★</td>
   </tr>
   <tr>

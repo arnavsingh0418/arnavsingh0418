@@ -59,15 +59,32 @@ const stars = Object.fromEntries(
   await Promise.all(repos.map(async (r) => [r, (await get(`https://api.github.com/repos/${r}`)).stargazers_count]))
 );
 
-for (const item of prs) {
-  item.kind = kindOf(item.pr.title);
-  item.score = (item.merged ? 10 : 0) + item.kind.weight * 2 + Math.log10(stars[repoOf(item.pr)] + 1);
+// An open PR counts as approved when each reviewer's latest verdict leaves at least
+// one approval and no outstanding "changes requested".
+async function isApproved(pr) {
+  const reviews = await get(`https://api.github.com/repos/${repoOf(pr)}/pulls/${pr.number}/reviews?per_page=100`);
+  const latest = new Map();
+  for (const r of reviews) {
+    if (['APPROVED', 'CHANGES_REQUESTED', 'DISMISSED'].includes(r.state)) latest.set(r.user?.login, r.state);
+  }
+  const verdicts = [...latest.values()];
+  return verdicts.includes('APPROVED') && !verdicts.includes('CHANGES_REQUESTED');
 }
-prs.sort((a, b) => b.score - a.score);
 
-function row({ pr, merged, kind }) {
+await Promise.all(
+  prs.map(async (item) => {
+    item.approved = !item.merged && (await isApproved(item.pr));
+    item.kind = kindOf(item.pr.title);
+    item.score =
+      (item.merged ? 10 : item.approved ? 5 : 0) + item.kind.weight * 2 + Math.log10(stars[repoOf(item.pr)] + 1);
+  })
+);
+prs.sort((a, b) => b.score - a.score);
+const approved = prs.filter((p) => p.approved).length;
+
+function row({ pr, merged, approved, kind }) {
   const repo = repoOf(pr);
-  const status = merged ? '<b>Merged</b>' : 'In review';
+  const status = merged ? '<b>Merged</b>' : approved ? '<b>Approved</b>' : 'In review';
   return `<tr>
     <td><a href="${pr.html_url}"><b>${repo}</b> #${pr.number}</a><br/><sub>${escape(cleanTitle(pr.title))}</sub></td>
     <td>${kind.label}</td>
@@ -76,10 +93,13 @@ function row({ pr, merged, kind }) {
   </tr>`;
 }
 
-// Only show a merged count once there is something merged.
-const summary = merged.length
-  ? `<b>${merged.length}</b> merged · <b>${open.length}</b> in review · across <b>${repos.length}</b> projects`
-  : `<b>${open.length}</b> pull requests in review across <b>${repos.length}</b> projects`;
+// Only show counts that are above zero.
+const counts = [
+  merged.length && `<b>${merged.length}</b> merged`,
+  approved && `<b>${approved}</b> approved`,
+  open.length - approved && `<b>${open.length - approved}</b> in review`,
+].filter(Boolean);
+const summary = `${counts.join(' · ')} · across <b>${repos.length}</b> open-source projects`;
 
 const section = prs.length
   ? `${START}
