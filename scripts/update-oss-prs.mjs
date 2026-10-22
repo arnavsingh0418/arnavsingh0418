@@ -1,11 +1,15 @@
 // Rewrites the open-source PR section of README.md from live GitHub data.
 // Runs in GitHub Actions (see .github/workflows/oss-prs.yml); no dependencies.
+//
+// PRs are ranked so the strongest work shows first:
+//   merged > in review, fix/feat/perf > refactor/test/docs > dependency bumps,
+//   and larger projects (by stars) rank above small ones.
 import fs from 'node:fs';
 
 const USER = 'arnavsingh0418';
 // Team/hackathon repos are not open-source contributions, so they are left out.
 const EXCLUDE_REPOS = ['TheMaster3558/Bridgify'];
-const SHOW = 3;
+const SHOW = 5;
 const README = new URL('../README.md', import.meta.url);
 const START = '<!-- OSS-PRS:START -->';
 const END = '<!-- OSS-PRS:END -->';
@@ -16,39 +20,78 @@ const headers = {
   ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}),
 };
 
+async function get(url) {
+  const res = await fetch(url, { headers });
+  if (!res.ok) throw new Error(`GitHub request failed (${res.status}) for ${url}: ${await res.text()}`);
+  return res.json();
+}
+
 async function search(state) {
   const q = [`is:pr author:${USER} -user:${USER} is:${state}`, ...EXCLUDE_REPOS.map((r) => `-repo:${r}`)].join(' ');
-  const url = `https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=100`;
-  const res = await fetch(url, { headers });
-  if (!res.ok) throw new Error(`GitHub search failed (${res.status}): ${await res.text()}`);
-  return (await res.json()).items;
+  return (await get(`https://api.github.com/search/issues?q=${encodeURIComponent(q)}&per_page=100`)).items;
 }
+
+// Conventional-commit prefix -> what kind of work it is and how much it counts.
+const KINDS = [
+  { match: /^(fix|bug|hotfix)\b/i, label: 'Bug fix', weight: 3 },
+  { match: /^(feat|feature)\b/i, label: 'Feature', weight: 3 },
+  { match: /^perf\b/i, label: 'Performance', weight: 3 },
+  { match: /^(refactor|test)\b/i, label: 'Refactor', weight: 2 },
+  { match: /^docs?\b/i, label: 'Docs', weight: 1 },
+  { match: /^(chore|build|ci|deps)\b|\bbump\b/i, label: 'Maintenance', weight: 1 },
+];
+const kindOf = (title) => KINDS.find((k) => k.match.test(title)) ?? { label: 'Contribution', weight: 2 };
 
 const escape = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const repoOf = (pr) => pr.repository_url.split('/repos/')[1];
-
-function list(prs, empty) {
-  if (!prs.length) return `<i>${empty}</i>`;
-  return prs
-    .map((pr) => `<a href="${pr.html_url}"><b>${repoOf(pr)}</b> #${pr.number}</a><br/><sub>${escape(pr.title)}</sub>`)
-    .join('<br/><br/>');
-}
+// "fix(fonts): load the selected weights" -> "Load the selected weights"
+const cleanTitle = (t) => {
+  const s = t.replace(/^[a-z]+(\([^)]*\))?!?:\s*/i, '');
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+const fmtStars = (n) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k` : `${n}`);
 
 const [merged, open] = await Promise.all([search('merged'), search('open')]);
-merged.sort((a, b) => b.pull_request.merged_at.localeCompare(a.pull_request.merged_at));
-open.sort((a, b) => b.created_at.localeCompare(a.created_at));
-const projects = new Set([...merged, ...open].map(repoOf)).size;
+const prs = [...merged.map((pr) => ({ pr, merged: true })), ...open.map((pr) => ({ pr, merged: false }))];
 
-const section = `${START}
-<p><b>${merged.length}</b> merged · <b>${open.length}</b> in review · across <b>${projects}</b> open-source projects</p>
+const repos = [...new Set(prs.map(({ pr }) => repoOf(pr)))];
+const stars = Object.fromEntries(
+  await Promise.all(repos.map(async (r) => [r, (await get(`https://api.github.com/repos/${r}`)).stargazers_count]))
+);
+
+for (const item of prs) {
+  item.kind = kindOf(item.pr.title);
+  item.score = (item.merged ? 10 : 0) + item.kind.weight * 2 + Math.log10(stars[repoOf(item.pr)] + 1);
+}
+prs.sort((a, b) => b.score - a.score);
+
+function row({ pr, merged, kind }) {
+  const repo = repoOf(pr);
+  const status = merged ? '<b>Merged</b>' : 'In review';
+  return `<tr>
+    <td><a href="${pr.html_url}"><b>${repo}</b> #${pr.number}</a><br/><sub>${escape(cleanTitle(pr.title))}</sub></td>
+    <td>${kind.label}</td>
+    <td>${status}</td>
+    <td align="right">${fmtStars(stars[repo])}★</td>
+  </tr>`;
+}
+
+// Only show a merged count once there is something merged.
+const summary = merged.length
+  ? `<b>${merged.length}</b> merged · <b>${open.length}</b> in review · across <b>${repos.length}</b> projects`
+  : `<b>${open.length}</b> pull requests in review across <b>${repos.length}</b> projects`;
+
+const section = prs.length
+  ? `${START}
+<p>${summary}</p>
 <table>
-  <tr><th width="50%">✅ Recently merged</th><th width="50%">⏳ In review</th></tr>
-  <tr>
-    <td valign="top">${list(merged.slice(0, SHOW), 'None merged yet: the first ones are in review.')}</td>
-    <td valign="top">${list(open.slice(0, SHOW), 'Nothing in review right now.')}</td>
-  </tr>
+  <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
+  ${prs.slice(0, SHOW).map(row).join('\n  ')}
 </table>
-<sub>Updated automatically from GitHub once a day.</sub>
+<sub>Ranked by impact and updated automatically from GitHub once a day.</sub>
+${END}`
+  : `${START}
+<p><i>First contributions coming soon.</i></p>
 ${END}`;
 
 const readme = fs.readFileSync(README, 'utf8');
@@ -58,7 +101,7 @@ if (start === -1 || end === -1) throw new Error(`README.md needs ${START} and ${
 const next = readme.slice(0, start) + section + readme.slice(end + END.length);
 if (next !== readme) {
   fs.writeFileSync(README, next);
-  console.log(`Updated: ${merged.length} merged, ${open.length} open, ${projects} projects`);
+  console.log(`Updated: ${merged.length} merged, ${open.length} open, ${repos.length} projects`);
 } else {
   console.log('No change');
 }
