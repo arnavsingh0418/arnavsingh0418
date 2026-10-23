@@ -72,7 +72,7 @@
     <td align="right">764★</td>
   </tr>
 </table>
-<sub>Ranked by impact and updated automatically from GitHub once a day.</sub>
+<sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
 <!-- OSS-PRS:END -->
 
 ## 🚀 Featured Projects
