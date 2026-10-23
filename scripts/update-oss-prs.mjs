@@ -108,7 +108,7 @@ const section = prs.length
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   ${prs.slice(0, SHOW).map(row).join('\n  ')}
 </table>
-<sub>Ranked by impact and updated automatically from GitHub once a day.</sub>
+<sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
 ${END}`
   : `${START}
 <p><i>First contributions coming soon.</i></p>
