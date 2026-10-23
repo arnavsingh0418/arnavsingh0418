@@ -38,7 +38,7 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>2</b> merged · <b>2</b> in review · across <b>4</b> open-source projects</p>
+<p><b>2</b> merged · <b>3</b> in review · across <b>5</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
@@ -58,6 +58,12 @@
     <td>Bug fix</td>
     <td>In review</td>
     <td align="right">3.0k★</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty</b> #28658</a><br/><sub>Resolve select form fields of application workflows by universal iden…</sub></td>
+    <td>Contribution</td>
+    <td>In review</td>
+    <td align="right">60k★</td>
   </tr>
   <tr>
     <td><a href="https://github.com/dapr/dapr-agents/pull/913"><b>dapr/dapr-agents</b> #913</a><br/><sub>Bump dapr Python SDK to 1.19.0rc4 and use dapr[fastapi,w…</sub></td>
