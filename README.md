@@ -38,7 +38,7 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>2</b> merged · <b>3</b> in review · across <b>5</b> open-source projects</p>
+<p><b>3</b> merged · <b>3</b> in review · across <b>6</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
@@ -56,20 +56,20 @@
   <tr>
     <td><a href="https://github.com/silexlabs/Silex/pull/1930"><b>silexlabs/Silex</b> #1930</a><br/><sub>Load the selected weights on the published website</sub></td>
     <td>Bug fix</td>
-    <td>In review</td>
+    <td><b>Merged</b></td>
     <td align="right">3.0k★</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/repowise-dev/repowise/pull/4535"><b>repowise-dev/repowise</b> #4535</a><br/><sub>Read AsyncAPI documents as topic contracts</sub></td>
+    <td>Feature</td>
+    <td>In review</td>
+    <td align="right">7.9k★</td>
   </tr>
   <tr>
     <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty</b> #28658</a><br/><sub>Resolve select form fields of application workflows by universal iden…</sub></td>
     <td>Contribution</td>
     <td>In review</td>
     <td align="right">60k★</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/dapr/dapr-agents/pull/913"><b>dapr/dapr-agents</b> #913</a><br/><sub>Bump dapr Python SDK to 1.19.0rc4 and use dapr[fastapi,w…</sub></td>
-    <td>Maintenance</td>
-    <td>In review</td>
-    <td align="right">764★</td>
   </tr>
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
