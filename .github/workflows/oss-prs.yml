@@ -2,7 +2,7 @@ name: Update open-source PRs
 
 on:
   schedule:
-    - cron: "17 14 * * *"     # once a day (14:17 UTC, early morning Pacific)
+      - cron: "17 */5 * * *"    # every 5 hours
   workflow_dispatch:         # "Run workflow" button for an instant refresh
   push:
     branches: [main]
