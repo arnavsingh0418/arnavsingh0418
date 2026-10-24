@@ -38,9 +38,15 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>3</b> merged · <b>3</b> in review · across <b>6</b> open-source projects</p>
+<p><b>4</b> merged · <b>3</b> in review · across <b>6</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
+  <tr>
+    <td><a href="https://github.com/Tencent/teamai-cli/pull/1357"><b>Tencent/teamai-cli</b> #1357</a><br/><sub>Keep the Copilot skip guard text fixed across bundler ren…</sub></td>
+    <td>Bug fix</td>
+    <td><b>Merged</b></td>
+    <td align="right">5.6k★</td>
+  </tr>
   <tr>
     <td><a href="https://github.com/Tencent/teamai-cli/pull/1281"><b>Tencent/teamai-cli</b> #1281</a><br/><sub>Decode exec and clone output once per stream so split UTF-8 survives</sub></td>
     <td>Bug fix</td>
@@ -64,12 +70,6 @@
     <td>Feature</td>
     <td>In review</td>
     <td align="right">7.9k★</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty</b> #28658</a><br/><sub>Resolve select form fields of application workflows by universal iden…</sub></td>
-    <td>Contribution</td>
-    <td>In review</td>
-    <td align="right">60k★</td>
   </tr>
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
