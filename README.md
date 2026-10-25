@@ -42,33 +42,33 @@
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
-    <td><a href="https://github.com/Tencent/teamai-cli/pull/1357"><b>Tencent/teamai-cli</b> #1357</a><br/><sub>Keep the Copilot skip guard text fixed across bundler ren…</sub><details><summary><sub>+1 more from this repo</sub></summary><sub><a href="https://github.com/Tencent/teamai-cli/pull/1281">#1281</a> Decode exec and clone output once per stream so split UTF-8 survives (Merged)</sub></details></td>
+    <td><a href="https://github.com/Tencent/teamai-cli/pull/1357"><b>Tencent/teamai-cli #1357</b></a><br/>Keep the Copilot skip guard text fixed across bundler ren…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/Tencent/teamai-cli/pull/1281">#1281</a> Decode exec and clone output once per stream so split UTF-8 survives · <i>Merged</i></details></td>
     <td>Bug fix</td>
     <td><b>Merged</b></td>
     <td align="right">5.6k★</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/neomjs/neo/pull/20007"><b>neomjs/neo</b> #20007</a><br/><sub>Rectangle#intersects never returns a Boolean; add contains…</sub></td>
+    <td><a href="https://github.com/neomjs/neo/pull/20007"><b>neomjs/neo #20007</b></a><br/>Rectangle#intersects never returns a Boolean; add contains…</td>
     <td>Bug fix</td>
     <td><b>Merged</b></td>
     <td align="right">3.3k★</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/silexlabs/Silex/pull/1930"><b>silexlabs/Silex</b> #1930</a><br/><sub>Load the selected weights on the published website</sub></td>
+    <td><a href="https://github.com/silexlabs/Silex/pull/1930"><b>silexlabs/Silex #1930</b></a><br/>Load the selected weights on the published website</td>
     <td>Bug fix</td>
     <td><b>Merged</b></td>
     <td align="right">3.0k★</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/repowise-dev/repowise/pull/4535"><b>repowise-dev/repowise</b> #4535</a><br/><sub>Read AsyncAPI documents as topic contracts</sub></td>
+    <td><a href="https://github.com/repowise-dev/repowise/pull/4535"><b>repowise-dev/repowise #4535</b></a><br/>Read AsyncAPI documents as topic contracts</td>
     <td>Feature</td>
-    <td>In review</td>
+    <td>In&nbsp;review</td>
     <td align="right">7.9k★</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty</b> #28658</a><br/><sub>Resolve select form fields of application workflows by universal iden…</sub></td>
+    <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty #28658</b></a><br/>Resolve select form fields of application workflows by universal iden…</td>
     <td>Contribution</td>
-    <td>In review</td>
+    <td>In&nbsp;review</td>
     <td align="right">60k★</td>
   </tr>
 </table>

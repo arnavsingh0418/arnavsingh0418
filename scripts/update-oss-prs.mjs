@@ -94,14 +94,15 @@ for (const item of prs) {
 
 function row({ repo, top, rest }) {
   const { pr, kind } = top;
-  const status = statusOf(top) === 'In review' ? 'In review' : `<b>${statusOf(top)}</b>`;
+  const status = statusOf(top) === 'In review' ? 'In&nbsp;review' : `<b>${statusOf(top)}</b>`;
+  // The best PR is the headline; the repo's other PRs sit in a dropdown, readable but not bold.
   const more = rest.length
-    ? `<details><summary><sub>+${rest.length} more from this repo</sub></summary><sub>${rest
-        .map((item) => `<a href="${item.pr.html_url}">#${item.pr.number}</a> ${escape(cleanTitle(item.pr.title))} (${statusOf(item)})`)
-        .join('<br/>')}</sub></details>`
+    ? `<details><summary><b>+${rest.length} more PR${rest.length > 1 ? 's' : ''}</b></summary>${rest
+        .map((item) => `<a href="${item.pr.html_url}">#${item.pr.number}</a> ${escape(cleanTitle(item.pr.title))} · <i>${statusOf(item)}</i>`)
+        .join('<br/>')}</details>`
     : '';
   return `<tr>
-    <td><a href="${pr.html_url}"><b>${repo}</b> #${pr.number}</a><br/><sub>${escape(cleanTitle(pr.title))}</sub>${more}</td>
+    <td><a href="${pr.html_url}"><b>${repo} #${pr.number}</b></a><br/>${escape(cleanTitle(pr.title))}${more}</td>
     <td>${kind.label}</td>
     <td>${status}</td>
     <td align="right">${fmtStars(stars[repo])}★</td>
