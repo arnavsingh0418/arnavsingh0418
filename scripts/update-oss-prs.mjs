@@ -82,11 +82,26 @@ await Promise.all(
 prs.sort((a, b) => b.score - a.score);
 const approved = prs.filter((p) => p.approved).length;
 
-function row({ pr, merged, approved, kind }) {
-  const repo = repoOf(pr);
-  const status = merged ? '<b>Merged</b>' : approved ? '<b>Approved</b>' : 'In review';
+const statusOf = ({ merged, approved }) => (merged ? 'Merged' : approved ? 'Approved' : 'In review');
+
+// One row per repo: its best-ranked PR, with the repo's other PRs in a dropdown.
+const groups = [];
+for (const item of prs) {
+  const group = groups.find((g) => g.repo === repoOf(item.pr));
+  if (group) group.rest.push(item);
+  else groups.push({ repo: repoOf(item.pr), top: item, rest: [] });
+}
+
+function row({ repo, top, rest }) {
+  const { pr, kind } = top;
+  const status = statusOf(top) === 'In review' ? 'In review' : `<b>${statusOf(top)}</b>`;
+  const more = rest.length
+    ? `<details><summary><sub>+${rest.length} more from this repo</sub></summary><sub>${rest
+        .map((item) => `<a href="${item.pr.html_url}">#${item.pr.number}</a> ${escape(cleanTitle(item.pr.title))} (${statusOf(item)})`)
+        .join('<br/>')}</sub></details>`
+    : '';
   return `<tr>
-    <td><a href="${pr.html_url}"><b>${repo}</b> #${pr.number}</a><br/><sub>${escape(cleanTitle(pr.title))}</sub></td>
+    <td><a href="${pr.html_url}"><b>${repo}</b> #${pr.number}</a><br/><sub>${escape(cleanTitle(pr.title))}</sub>${more}</td>
     <td>${kind.label}</td>
     <td>${status}</td>
     <td align="right">${fmtStars(stars[repo])}★</td>
@@ -106,7 +121,7 @@ const section = prs.length
 <p>${summary}</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
-  ${prs.slice(0, SHOW).map(row).join('\n  ')}
+  ${groups.slice(0, SHOW).map(row).join('\n  ')}
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
 ${END}`
