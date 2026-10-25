@@ -45,7 +45,7 @@
     <td><a href="https://github.com/Tencent/teamai-cli/pull/1357"><b>Tencent/teamai-cli #1357</b></a><br/>Keep the Copilot skip guard text fixed across bundler ren…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/Tencent/teamai-cli/pull/1281">#1281</a> Decode exec and clone output once per stream so split UTF-8 survives · <i>Merged</i></details></td>
     <td>Bug fix</td>
     <td><b>Merged</b></td>
-    <td align="right">5.6k★</td>
+    <td align="right">5.7k★</td>
   </tr>
   <tr>
     <td><a href="https://github.com/neomjs/neo/pull/20007"><b>neomjs/neo #20007</b></a><br/>Rectangle#intersects never returns a Boolean; add contains…</td>
