@@ -38,7 +38,7 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>4</b> merged · <b>3</b> in review · across <b>6</b> open-source projects</p>
+<p><b>4</b> merged · <b>4</b> in review · across <b>6</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
@@ -60,16 +60,16 @@
     <td align="right">3.0k★</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/twentyhq/twenty/pull/28825"><b>twentyhq/twenty #28825</b></a><br/>Keep the Not Set group when gap-filling select and da…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/twentyhq/twenty/pull/28658">#28658</a> Resolve select form fields of application workflows by universal iden… · <i>In review</i></details></td>
+    <td>Bug fix</td>
+    <td>In&nbsp;review</td>
+    <td align="right">60k★</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/repowise-dev/repowise/pull/4535"><b>repowise-dev/repowise #4535</b></a><br/>Read AsyncAPI documents as topic contracts</td>
     <td>Feature</td>
     <td>In&nbsp;review</td>
     <td align="right">7.9k★</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty #28658</b></a><br/>Resolve select form fields of application workflows by universal iden…</td>
-    <td>Contribution</td>
-    <td>In&nbsp;review</td>
-    <td align="right">60k★</td>
   </tr>
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
