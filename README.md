@@ -38,7 +38,7 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>4</b> merged · <b>6</b> in review · across <b>8</b> open-source projects</p>
+<p><b>4</b> merged · <b>1</b> approved · <b>5</b> in review · across <b>8</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
@@ -60,16 +60,16 @@
     <td align="right">3.0k★</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/apache/airflow/pull/75684"><b>apache/airflow #75684</b></a><br/>Don't fire keyboard shortcuts while typing in a Monaco editor</td>
+    <td>Contribution</td>
+    <td><b>Approved</b></td>
+    <td align="right">47k★</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/career-ops-hq/career-ops/pull/5996"><b>career-ops-hq/career-ops #5996</b></a><br/>Read Node's bracketed error code as a scan failure cause</td>
     <td>Bug fix</td>
     <td>In&nbsp;review</td>
     <td align="right">78k★</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/twentyhq/twenty/pull/28825"><b>twentyhq/twenty #28825</b></a><br/>Keep the Not Set group when gap-filling select and da…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/twentyhq/twenty/pull/28658">#28658</a> Resolve select form fields of application workflows by universal iden… · <i>In review</i></details></td>
-    <td>Bug fix</td>
-    <td>In&nbsp;review</td>
-    <td align="right">60k★</td>
   </tr>
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
