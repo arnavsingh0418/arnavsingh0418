@@ -38,7 +38,7 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>5</b> merged · <b>2</b> approved · <b>3</b> in review · across <b>8</b> open-source projects</p>
+<p><b>8</b> merged · <b>2</b> in review · across <b>8</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
@@ -66,10 +66,10 @@
     <td align="right">3.0k★</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/apache/airflow/pull/75684"><b>apache/airflow #75684</b></a><br/>Don't fire keyboard shortcuts while typing in a Monaco editor</td>
+    <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty #28658</b></a><br/>Resolve select form fields of application workflows by universal iden…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/twentyhq/twenty/pull/28825">#28825</a> Keep the Not Set group when gap-filling select and da… · <i>In review</i></details></td>
     <td>Contribution</td>
-    <td><b>Approved</b></td>
-    <td align="right">47k★</td>
+    <td><b>Merged</b></td>
+    <td align="right">60k★</td>
   </tr>
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
