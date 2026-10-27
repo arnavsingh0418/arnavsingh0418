@@ -38,9 +38,15 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>4</b> merged · <b>1</b> approved · <b>5</b> in review · across <b>8</b> open-source projects</p>
+<p><b>5</b> merged · <b>2</b> approved · <b>3</b> in review · across <b>8</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
+  <tr>
+    <td><a href="https://github.com/career-ops-hq/career-ops/pull/5996"><b>career-ops-hq/career-ops #5996</b></a><br/>Read Node's bracketed error code as a scan failure cause</td>
+    <td>Bug fix</td>
+    <td><b>Merged</b></td>
+    <td align="right">78k★</td>
+  </tr>
   <tr>
     <td><a href="https://github.com/Tencent/teamai-cli/pull/1357"><b>Tencent/teamai-cli #1357</b></a><br/>Keep the Copilot skip guard text fixed across bundler ren…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/Tencent/teamai-cli/pull/1281">#1281</a> Decode exec and clone output once per stream so split UTF-8 survives · <i>Merged</i></details></td>
     <td>Bug fix</td>
@@ -64,12 +70,6 @@
     <td>Contribution</td>
     <td><b>Approved</b></td>
     <td align="right">47k★</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/career-ops-hq/career-ops/pull/5996"><b>career-ops-hq/career-ops #5996</b></a><br/>Read Node's bracketed error code as a scan failure cause</td>
-    <td>Bug fix</td>
-    <td>In&nbsp;review</td>
-    <td align="right">78k★</td>
   </tr>
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
