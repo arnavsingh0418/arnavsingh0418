@@ -38,7 +38,7 @@
 ## 🌍 Open Source
 
 <!-- OSS-PRS:START -->
-<p><b>8</b> merged · <b>2</b> in review · across <b>8</b> open-source projects</p>
+<p><b>9</b> merged · <b>1</b> in review · across <b>8</b> open-source projects</p>
 <table>
   <tr><th align="left">Pull request</th><th align="left">Type</th><th align="left">Status</th><th align="right">Repo stars</th></tr>
   <tr>
@@ -46,6 +46,12 @@
     <td>Bug fix</td>
     <td><b>Merged</b></td>
     <td align="right">79k★</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/twentyhq/twenty/pull/28825"><b>twentyhq/twenty #28825</b></a><br/>Keep the Not Set group when gap-filling select and da…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/twentyhq/twenty/pull/28658">#28658</a> Resolve select form fields of application workflows by universal iden… · <i>Merged</i></details></td>
+    <td>Bug fix</td>
+    <td><b>Merged</b></td>
+    <td align="right">60k★</td>
   </tr>
   <tr>
     <td><a href="https://github.com/Tencent/teamai-cli/pull/1357"><b>Tencent/teamai-cli #1357</b></a><br/>Keep the Copilot skip guard text fixed across bundler ren…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/Tencent/teamai-cli/pull/1281">#1281</a> Decode exec and clone output once per stream so split UTF-8 survives · <i>Merged</i></details></td>
@@ -64,12 +70,6 @@
     <td>Bug fix</td>
     <td><b>Merged</b></td>
     <td align="right">3.0k★</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/twentyhq/twenty/pull/28658"><b>twentyhq/twenty #28658</b></a><br/>Resolve select form fields of application workflows by universal iden…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/twentyhq/twenty/pull/28825">#28825</a> Keep the Not Set group when gap-filling select and da… · <i>In review</i></details></td>
-    <td>Contribution</td>
-    <td><b>Merged</b></td>
-    <td align="right">60k★</td>
   </tr>
 </table>
 <sub>Ranked by impact and updated automatically from GitHub every few hours.</sub>
