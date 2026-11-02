@@ -45,7 +45,7 @@
     <td><a href="https://github.com/career-ops-hq/career-ops/pull/5996"><b>career-ops-hq/career-ops #5996</b></a><br/>Read Node's bracketed error code as a scan failure cause</td>
     <td>Bug fix</td>
     <td><b>Merged</b></td>
-    <td align="right">79k★</td>
+    <td align="right">80k★</td>
   </tr>
   <tr>
     <td><a href="https://github.com/twentyhq/twenty/pull/28825"><b>twentyhq/twenty #28825</b></a><br/>Keep the Not Set group when gap-filling select and da…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/twentyhq/twenty/pull/28658">#28658</a> Resolve select form fields of application workflows by universal iden… · <i>Merged</i></details></td>
