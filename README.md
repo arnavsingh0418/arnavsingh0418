@@ -51,7 +51,7 @@
     <td><a href="https://github.com/twentyhq/twenty/pull/28825"><b>twentyhq/twenty #28825</b></a><br/>Keep the Not Set group when gap-filling select and da…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/twentyhq/twenty/pull/28658">#28658</a> Resolve select form fields of application workflows by universal iden… · <i>Merged</i></details></td>
     <td>Bug fix</td>
     <td><b>Merged</b></td>
-    <td align="right">60k★</td>
+    <td align="right">61k★</td>
   </tr>
   <tr>
     <td><a href="https://github.com/Tencent/teamai-cli/pull/1357"><b>Tencent/teamai-cli #1357</b></a><br/>Keep the Copilot skip guard text fixed across bundler ren…<details><summary><b>+1 more PR</b></summary><a href="https://github.com/Tencent/teamai-cli/pull/1281">#1281</a> Decode exec and clone output once per stream so split UTF-8 survives · <i>Merged</i></details></td>
